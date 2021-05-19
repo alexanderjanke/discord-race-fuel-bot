@@ -1,0 +1,27 @@
+{
+  "name": "discord-race-fuel-bot",
+  "version": "1.0.0",
+  "description": "Discord bot to calculate fuel needed for racing",
+  "main": "main.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderjanke/discord-race-fuel-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexanderjanke/discord-race-fuel-bot/issues"
+  },
+  "homepage": "https://github.com/alexanderjanke/discord-race-fuel-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
+  }
+}
