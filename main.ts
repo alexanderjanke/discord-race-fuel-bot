@@ -9,6 +9,7 @@ client.on("ready", () => {
 client.on("message", (msg) => {
   try {
     if (msg.author.bot) return;
+    if (!msg.content.startsWith("!fuel")) return;
     let foundCmd = false;
     console.log(`${msg.content} from ${msg.author.username}`);
     commands.forEach((cmd) => {
