@@ -1,4 +1,4 @@
-const DurationRegex = /^\d+:\d{2}$/;
+const DurationRegex = /^\d+:\d{2}(\.\d{1,3})?$/;
 const IntRegex = /^\d+$/;
 
 class Command<T> {
@@ -24,7 +24,7 @@ class Command<T> {
 
 function ParseDuration(time: string) {
   if (!DurationRegex.test(time)) return null;
-  const [minutes, seconds] = time.split(":").map((x) => parseInt(x));
+  const [minutes, seconds] = time.split(":").map((x) => parseFloat(x));
   return minutes * 60 + seconds;
 }
 
