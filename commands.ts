@@ -9,7 +9,7 @@ class Command<T> {
   constructor(
     prefix: string,
     args: (msg: string, prefix: string) => T,
-    answerText: (args: T) => string
+    answerText: (args: T) => string,
   ) {
     this.prefix = prefix;
     this.args = args;
@@ -33,7 +33,7 @@ function ParseInteger(time: string) {
   return parseInt(time);
 }
 
-function BuildAnswer(fuel: number, suffix: string = "") {
+function BuildAnswer(fuel: number, suffix = "") {
   return `I calculated: ${fuel.toFixed(2)}L${suffix ? ` | ${suffix}` : ""}`;
 }
 
@@ -70,7 +70,7 @@ const stint = new Command(
     const laps = args.duration / args.lapTime;
     const fuel = (laps + args.extraLap) * args.fuelPerLap;
     return BuildAnswer(fuel, `${laps.toFixed(2)} Laps`);
-  }
+  },
 );
 
 const laps = new Command(
@@ -101,11 +101,12 @@ const laps = new Command(
   (args) => {
     const fuel = (args.laps + args.extraLap) * args.fuelPerLap;
     return BuildAnswer(fuel);
-  }
+  },
 );
 
 const help = new Command(
   "!fuel help",
+  // eslint-disable-next-line
   () => {},
   () => {
     return `
@@ -120,7 +121,7 @@ const help = new Command(
     > Example laps with extra: \`!fuel 45 3.2 1\`
     
     Running this bot costs a few € monthly. I'd highly appreciate any donation: https://paypal.me/alexanderjanke92/1`;
-  }
+  },
 );
 
 const commands = [stint, laps, help];
