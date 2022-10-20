@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/alexanderjanke/discord-race-fuel-bot#readme",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^14.6.0"
   },
   "devDependencies": {
     "@types/node": "^18.8.5",
